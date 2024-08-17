@@ -1,26 +1,29 @@
 import React from "react";
 import { CssBaseline } from "@mui/material";
 import { Route, Switch } from "react-router-dom";
+
+import { Actors, MovieInformation, Movies, NavBar, Profile } from "./";
 const App = () => {
   return (
     <div>
       <CssBaseline />
-      <main>
+      <NavBar />
+      <div>
         <Switch>
           <Route exact path="/movie/:id">
-            <h1>Movie Information</h1>
+            <MovieInformation />
           </Route>
           <Route exact path="/actors/:id">
-            <h1>Actors</h1>
+            <Actors />
           </Route>
           <Route exact path="/">
-            <h1>Movies</h1>
+            <Movies />
           </Route>
           <Route exact path="/profile/:id">
-            <h1>Profile</h1>
+            <Profile />
           </Route>
         </Switch>
-      </main>
+      </div>
     </div>
   );
 };
